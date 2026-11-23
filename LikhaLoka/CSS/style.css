@@ -1,0 +1,505 @@
+/* =========================================================
+   style.css: all styling for the website
+   ========================================================= */
+
+/* ---------- CSS FEATURE: custom properties (variables) ---------- */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --radius: 12px;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --transition: 0.3s ease;
+}
+
+/* Dark theme: JavaScript adds the "dark" class to <body> */
+body.dark {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --border: #334155;
+}
+
+/* ---------- Reset and base styles ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* CSS FEATURE: smooth scrolling for anchor links */
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background var(--transition), color var(--transition);
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+section {
+  padding: 4rem 0 2rem;
+  scroll-margin-top: 70px; /* keeps headings visible under the sticky header */
+}
+
+h2 {
+  margin-bottom: 1.25rem;
+  font-size: 1.8rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- CSS FEATURE: Flexbox header, sticky positioning ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.5rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+.main-nav a {
+  position: relative;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* CSS FEATURE: pseudo-element underline animation on hover */
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width var(--transition);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
+.menu-toggle,
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.menu-toggle {
+  display: none; /* only shown on small screens */
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.3rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px); /* CSS FEATURE: transforms */
+}
+
+/* ---------- CSS FEATURE: gradients and keyframe animation ---------- */
+.hero {
+  margin-top: 2rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #4f46e5, #9333ea, #ec4899);
+  background-size: 200% 200%;
+  color: #fff;
+  animation: gradientShift 8s ease infinite, fadeIn 1s ease;
+}
+
+.hero h2 {
+  font-size: 2.4rem;
+}
+
+.hero p {
+  margin-bottom: 1rem;
+}
+
+.hero mark {
+  padding: 0 0.3rem;
+  border-radius: 4px;
+}
+
+.hero .btn {
+  background: #fff;
+  color: var(--primary);
+}
+
+.greeting {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- CSS FEATURE: Grid layout for cards ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* CSS FEATURE: nth-child selectors give each card its own accent color */
+.card:nth-child(1) { border-top: 4px solid #e44d26; }
+.card:nth-child(2) { border-top: 4px solid #264de4; }
+.card:nth-child(3) { border-top: 4px solid #f0db4f; }
+
+/* Scroll-reveal: JavaScript adds .visible when the element enters the screen */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.faq summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq p {
+  margin-top: 0.5rem;
+}
+
+.figure {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.figure figcaption {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- Task list ---------- */
+.task-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+/* CSS FEATURE: :focus state for accessibility */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  animation: fadeIn 0.3s ease;
+}
+
+.task-list li span {
+  flex: 1;
+  cursor: pointer;
+}
+
+.task-list li.done span {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.task-list .delete {
+  border: none;
+  background: none;
+  color: #ef4444;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* ---------- Table ---------- */
+#table-search {
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+caption {
+  caption-side: bottom;
+  padding: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+th.asc::after  { content: " ▲"; }
+th.desc::after { content: " ▼"; }
+
+/* CSS FEATURE: zebra striping and row hover */
+tbody tr:nth-child(even) {
+  background: rgba(79, 70, 229, 0.05);
+}
+
+tbody tr:hover {
+  background: rgba(79, 70, 229, 0.12);
+}
+
+/* ---------- Contact form ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 550px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.contact-form .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 400;
+}
+
+.contact-form .checkbox input {
+  width: auto;
+}
+
+.contact-form .btn {
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+/* Error state: JavaScript adds .invalid to bad fields */
+.invalid {
+  border: 2px solid #ef4444;
+}
+
+.form-status {
+  font-weight: 600;
+  color: #ef4444;
+}
+
+/* ---------- Modal ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-content {
+  max-width: 400px;
+  width: 90%;
+  padding: 2rem;
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content p {
+  margin: 0.75rem 0 1.25rem;
+}
+
+/* ---------- Back-to-top button ---------- */
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  text-align: center;
+  background: var(--surface);
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- CSS FEATURE: media queries for responsive design ---------- */
+@media (max-width: 700px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .main-nav.open {
+    display: block;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .main-nav li {
+    padding: 0.6rem 0;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+}
