@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LikhaLoka - Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="artisans.html">Artisans</a>
+    <a href="contacts.html">Contact</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+
+  <section>
+    <h2>Contact Us</h2>
+    <div class="box">
+      <p>Interested in a product? Send us your details.</p>
+      <input type="text" id="name" placeholder="Your name">
+      <input type="email" id="email" placeholder="Your email">
+      <input type="tel" id="phone" placeholder="09XXXXXXXXX" maxlength="11">
+      <select id="product">
+        <option value="">Choose a product</option>
+      </select>
+      <textarea id="message" placeholder="Your message"></textarea>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </section>
+
+  <footer>© 2026 LikhaLoka</footer>
+
+  <script src="data.js"></script>
+  <script src="contacts.js"></script>
+</body>
+</html>
