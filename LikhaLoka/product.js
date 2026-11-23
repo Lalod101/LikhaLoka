@@ -1,33 +1,38 @@
-// products.js - shows the products, with search and filter
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LikhaLoka - Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-let products = getProducts();
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="artisans.html">Artisans</a>
+    <a href="contacts.html">Contact</a>
+    <a href="admin.html">Admin</a>
+  </nav>
 
-function showProducts() {
-  let search = document.getElementById("search").value.toLowerCase();
-  let category = document.getElementById("category").value;
-  let html = "";
+  <section>
+    <h2>Products</h2>
 
-  products.forEach(function (p) {
-    let matchSearch = p.name.toLowerCase().includes(search);
-    let matchCategory = category == "All" || p.category == category;
+    <input type="text" id="search" placeholder="Search products...">
+    <select id="category">
+      <option value="All">All</option>
+      <option value="Hablon">Hablon</option>
+      <option value="Piña">Piña</option>
+      <option value="Woven">Woven</option>
+    </select>
 
-    if (matchSearch && matchCategory) {
-           html += "<div class='card'>" +
-                "<h3>" + p.name + "</h3>" +
-                "<p>Category: " + p.category + "</p>" +
-                "<p class='price'>₱" + p.price + "</p>" +
-                "<a class='btn' href='contacts.html'>Inquire</a>" +
-              "</div>";
-    }
-  });
+    <div class="cards" id="productList"></div>
+  </section>
 
-  if (html == "") {
-    html = "<p>No products found.</p>";
-  }
+  <footer>© 2026 LikhaLoka</footer>
 
-  document.getElementById("productList").innerHTML = html;
-}
-
-document.getElementById("search").addEventListener("input", showProducts);
-document.getElementById("category").addEventListener("change", showProducts);
-showProducts();
+  <script src="data.js"></script>
+  <script src="products.js"></script>
+</body>
+</html>
