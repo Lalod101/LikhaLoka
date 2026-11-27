@@ -1,0 +1,89 @@
+/* LikhaLoka — products styles */
+.craft-card {
+  min-width: 0;
+}
+.craft-photo {
+  overflow: hidden;
+  display: block;
+  border-radius: 10px;
+  background: var(--matcha);
+}
+.craft-photo img {
+  aspect-ratio: 1.23;
+  transition: transform 0.3s;
+}
+.craft-photo:hover img {
+  transform: scale(1.035);
+}
+.craft-card h3 a {
+  text-decoration: none;
+}
+.craft-card .link {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 22px 0;
+}
+.search {
+  flex: 1;
+  min-width: 180px;
+}
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.filters button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  border-radius: 30px;
+  padding: 8px 18px;
+  font-weight: 400;
+}
+.filters button[aria-pressed="true"] {
+  background: var(--olive);
+  color: white;
+  border-color: var(--olive);
+}
+.results-count {
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.breadcrumb {
+  display: flex;
+  gap: 12px;
+  font-size: 0.88rem;
+  margin: 32px 0;
+}
+.detail {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: 55px;
+  padding: 10px 0 65px;
+}
+.detail > img {
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+}
+.detail h1 {
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
+}
+.detail dl {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin: 25px 0;
+}
+.detail dd {
+  margin: 0;
+  color: var(--muted);
+}

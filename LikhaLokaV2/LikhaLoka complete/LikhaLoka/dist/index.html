@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Discover Filipino crafts and the stories behind them. LikhaLoka student website prototype."
+    />
+    <title>Home — LikhaLoka</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/products.css" />
+    <link rel="stylesheet" href="css/artisans.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="js/sample-data.js" defer></script>
+    <script src="js/storage.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/catalog.js" defer></script>
+    <script src="js/artisans.js" defer></script>
+    <script src="js/inquiries.js" defer></script>
+    <script src="js/pages.js" defer></script>
+    <script src="js/admin.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body data-page="home">
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="announcement">
+      Filipino creativity, thoughtfully discovered.
+    </div>
+    <header class="header">
+      <a class="brand" href="index.html"
+        ><span class="brand-mark" aria-hidden="true">▧</span> LikhaLoka<span
+          class="brand-dot"
+          >.</span
+        ></a
+      ><button
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="navigation"
+      >
+        Menu ☰
+      </button>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="products.html">Discover</a><a href="artisans.html">Artisans</a
+        ><a href="about.html">Our story</a><a href="contact.html">Contact</a
+        ><a class="nav-search" href="products.html">Search crafts</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">Made by hand. Rooted in culture.</span>
+          <h1>Local hands.<br />Lasting stories.</h1>
+          <p>
+            Discover Filipino crafts and the people who make them. Find beauty
+            in the details, and a story in every piece.
+          </p>
+          <div class="actions">
+            <a class="button" href="products.html">Explore crafts</a
+            ><a href="artisans.html">Meet the makers</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="assets/hero.webp"
+            alt="Dusty rose woven textile beside a woven basket and clay vase"
+            fetchpriority="high"
+          /><span class="hero-caption">Thoughtfully made, locally loved.</span>
+        </div>
+      </section>
+      <div class="wrap">
+        <div class="category-strip">
+          <span class="eyebrow">Explore by craft</span
+          ><a href="products.html?category=Textiles">Textiles</a
+          ><a href="products.html?category=Pottery">Pottery</a
+          ><a href="products.html?category=Woven%20goods">Woven goods</a>
+        </div>
+        <section class="section">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">The craft collection</span>
+              <h2>Everyday pieces.<br />Extraordinary hands.</h2>
+            </div>
+            <a href="products.html">View all crafts</a>
+          </div>
+          <div class="grid">
+            <article class="craft-card">
+              <a class="craft-photo" href="product.html?id=p1"
+                ><img
+                  loading="lazy"
+                  src="assets/scarf.webp"
+                  alt="Handwoven hablon scarf"
+                  width="500"
+                  height="400"
+              /></a>
+              <h3><a href="product.html?id=p1">Handwoven hablon scarf</a></h3>
+              <p class="meta">Habi Studio · Iloilo</p>
+              <a class="link" href="product.html?id=p1">View craft</a>
+            </article>
+            <article class="craft-card">
+              <a class="craft-photo" href="product.html?id=p2"
+                ><img
+                  loading="lazy"
+                  src="assets/vase.webp"
+                  alt="Hand-shaped clay vase"
+                  width="500"
+                  height="400"
+              /></a>
+              <h3><a href="product.html?id=p2">Hand-shaped clay vase</a></h3>
+              <p class="meta">Lupa Workshop · Western Visayas</p>
+              <a class="link" href="product.html?id=p2">View craft</a>
+            </article>
+            <article class="craft-card">
+              <a class="craft-photo" href="product.html?id=p3"
+                ><img
+                  loading="lazy"
+                  src="assets/basket.webp"
+                  alt="Woven market tote"
+                  width="500"
+                  height="400"
+              /></a>
+              <h3><a href="product.html?id=p3">Woven market tote</a></h3>
+              <p class="meta">Habi &amp; Home · Iloilo</p>
+              <a class="link" href="product.html?id=p3">View craft</a>
+            </article>
+          </div>
+        </section>
+        <section class="story-band">
+          <div>
+            <span class="eyebrow">People behind the pieces</span>
+            <h2>Behind every craft<br />is a maker.</h2>
+            <p>
+              Meet the people, explore their process, and discover the stories
+              woven into their work.
+            </p>
+            <a class="button" href="artisans.html">Discover their stories</a>
+          </div>
+          <img
+            loading="lazy"
+            src="assets/weaving.webp"
+            alt="Hands working with rose-colored thread on a loom"
+          />
+        </section>
+        <section class="values">
+          <div>
+            <h3>Discover with intention</h3>
+            <p>Browse by craft and find pieces that speak to you.</p>
+          </div>
+          <div>
+            <h3>Get to know the maker</h3>
+            <p>See the people and process behind the work.</p>
+          </div>
+          <div>
+            <h3>Start a conversation</h3>
+            <p>Ask about a piece, its materials, or the story behind it.</p>
+          </div>
+        </section>
+        <div class="section small">
+          A student concept celebrating Filipino craftsmanship. All current
+          listings and maker profiles are illustrative.
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <a class="brand" href="index.html">LikhaLoka.</a>
+        <p>Local hands. Lasting stories.</p>
+      </div>
+      <div>
+        <a href="products.html">Discover crafts</a
+        ><a href="artisans.html">Meet the makers</a
+        ><a href="about.html">Our story</a
+        ><a href="contact.html">Get in touch</a
+        ><a href="admin.html">Admin demo</a>
+      </div>
+      <p class="disclaimer">
+        Student prototype · Illustrative products, profiles and imagery.<br />Inquiries
+        stay in this browser. No messages are sent.
+      </p>
+    </footer>
+    <dialog id="dialog">
+      <div class="dialog-head">
+        <h2 id="dialog-title"></h2>
+        <button class="plain" id="close-dialog" aria-label="Close dialog">
+          ✕
+        </button>
+      </div>
+      <div id="dialog-content"></div>
+    </dialog>
+    <div id="notice" role="status" aria-live="polite"></div>
+  </body>
+</html>

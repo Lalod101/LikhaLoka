@@ -1,0 +1,15 @@
+/* LikhaLoka — contact styles */
+.form-box {
+  background: var(--matcha);
+  padding: 32px;
+  border-radius: 10px;
+  max-width: 730px;
+}
+.form-box h2 {
+  font-size: 1.9rem;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}

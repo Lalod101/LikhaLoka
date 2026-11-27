@@ -1,0 +1,28 @@
+/* LikhaLoka — artisans styles */
+.maker-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+}
+.maker-avatar {
+  background: var(--matcha);
+  color: var(--olive);
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  font-family: Lora, serif;
+  font-size: 1.5rem;
+}
+.profile-head {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin: 40px 0;
+}
+.profile-head h1 {
+  margin: 10px 0;
+  font-size: 3rem;
+}

@@ -1,0 +1,11 @@
+/* LikhaLoka — about styles */
+.editorial {
+  max-width: 780px;
+}
+.editorial p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+}
+.editorial h2 {
+  margin-top: 40px;
+}

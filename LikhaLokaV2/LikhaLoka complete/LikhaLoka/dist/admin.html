@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Discover Filipino crafts and the stories behind them. LikhaLoka student website prototype."
+    />
+    <title>Admin — LikhaLoka</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/products.css" />
+    <link rel="stylesheet" href="css/artisans.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script src="js/sample-data.js" defer></script>
+    <script src="js/storage.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/catalog.js" defer></script>
+    <script src="js/artisans.js" defer></script>
+    <script src="js/inquiries.js" defer></script>
+    <script src="js/pages.js" defer></script>
+    <script src="js/admin.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body data-page="admin">
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="announcement">
+      Filipino creativity, thoughtfully discovered.
+    </div>
+    <header class="header">
+      <a class="brand" href="index.html"
+        ><span class="brand-mark" aria-hidden="true">▧</span> LikhaLoka<span
+          class="brand-dot"
+          >.</span
+        ></a
+      ><button
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="navigation"
+      >
+        Menu ☰
+      </button>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="products.html">Discover</a><a href="artisans.html">Artisans</a
+        ><a href="about.html">Our story</a><a href="contact.html">Contact</a
+        ><a class="nav-search" href="products.html">Search crafts</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="wrap">
+        <div class="login">
+          <span class="eyebrow">Admin preview</span>
+          <h1 style="font-size: 2.4rem">Make room for more craft.</h1>
+          <p>
+            Explore product, artisan, and inquiry management in this browser.
+          </p>
+          <p class="banner">
+            Demo access only. This screen provides no authentication or access
+            security. Use sample information.
+          </p>
+          <button id="enter-admin">Enter admin demo</button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <a class="brand" href="index.html">LikhaLoka.</a>
+        <p>Local hands. Lasting stories.</p>
+      </div>
+      <div>
+        <a href="products.html">Discover crafts</a
+        ><a href="artisans.html">Meet the makers</a
+        ><a href="about.html">Our story</a
+        ><a href="contact.html">Get in touch</a
+        ><a href="admin.html">Admin demo</a>
+      </div>
+      <p class="disclaimer">
+        Student prototype · Illustrative products, profiles and imagery.<br />Inquiries
+        stay in this browser. No messages are sent.
+      </p>
+    </footer>
+    <dialog id="dialog">
+      <div class="dialog-head">
+        <h2 id="dialog-title"></h2>
+        <button class="plain" id="close-dialog" aria-label="Close dialog">
+          ✕
+        </button>
+      </div>
+      <div id="dialog-content"></div>
+    </dialog>
+    <div id="notice" role="status" aria-live="polite"></div>
+  </body>
+</html>
